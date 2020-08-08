@@ -1,6 +1,6 @@
 {
     "name": "godbout/chartjs-plugin-datalabels-dash-docset",
-    "description": "",
+    "description": "chartjs-plugin-datalabels Dash Docset, built with the Dash Docset Builder in PHP. Because plugins too need some love ❤️",
     "keywords": [
         "chart",
         "chartjs",
