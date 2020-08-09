@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Labels | chartjs-plugin-datalabels</title>
+    <meta name="description" content="Display labels on data for any type of charts.">
+    <link rel="icon" href="../favicon.png">
+    
+    <link rel="preload" href="../assets/css/0.styles.a27fffaf.css" as="style"><link rel="preload" href="../assets/js/app.c83c7867.js" as="script"><link rel="preload" href="../assets/js/3.a3a8139b.js" as="script"><link rel="preload" href="../assets/js/12.944237bb.js" as="script"><link rel="prefetch" href="../assets/js/10.b0c17275.js"><link rel="prefetch" href="../assets/js/11.5b33431a.js"><link rel="prefetch" href="../assets/js/13.6171da41.js"><link rel="prefetch" href="../assets/js/14.a6918b71.js"><link rel="prefetch" href="../assets/js/4.1c367e88.js"><link rel="prefetch" href="../assets/js/5.c5d53916.js"><link rel="prefetch" href="../assets/js/6.555c4730.js"><link rel="prefetch" href="../assets/js/7.31250aa5.js"><link rel="prefetch" href="../assets/js/8.a245b7fc.js"><link rel="prefetch" href="../assets/js/9.b9219e9d.js"><link rel="prefetch" href="../assets/js/vendors~docsearch.71614351.js">
+    <link rel="stylesheet" href="../assets/css/0.styles.a27fffaf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="../index.html" class="home-link router-link-active"><img src="../favicon.png" alt="chartjs-plugin-datalabels" class="logo"> <span class="site-name can-hide">chartjs-plugin-datalabels</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div><div class="nav-item"><a href="index.html" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="https://chartjs-plugin-datalabels.netlify.com/samples/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Samples
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/chartjs/chartjs-plugin-datalabels" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div><div class="nav-item"><a href="index.html" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="https://chartjs-plugin-datalabels.netlify.com/samples/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Samples
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/chartjs/chartjs-plugin-datalabels" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="index.html" class="sidebar-link">Introduction</a></li><li><a href="getting-started.html" class="sidebar-link">Getting Started</a></li><li><a href="options.html" class="sidebar-link">Options</a></li><li><a href="labels.html" class="active sidebar-link">Labels</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="labels.html#multiple-labels" class="sidebar-link">Multiple Labels</a></li><li class="sidebar-sub-header"><a href="labels.html#dataset-overrides" class="sidebar-link">Dataset Overrides</a></li></ul></li><li><a href="positioning.html" class="sidebar-link">Positioning</a></li><li><a href="formatting.html" class="sidebar-link">Formatting</a></li><li><a href="events.html" class="sidebar-link">Events</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="labels"><a href="labels.html#labels" aria-hidden="true" class="header-anchor">#</a> Labels</h1> <p>By default, a single label is created per data, however, it's possible to define multiple labels for each data element using the <code>labels</code> option. This option is an object where each property represents a new label, the key being the label key and the value being the options specific to each label. These options are merged on top of the options defined at the chart <strong>and</strong> dataset levels.</p> <h2 id="multiple-labels"><a href="labels.html#multiple-labels" aria-hidden="true" class="header-anchor">#</a> Multiple Labels</h2> <p>The following snippet creates two labels for every data element, the first with <code>title</code> as key and the second with <code>value</code> as key. The <code>title</code> label text is blue with font in bold. The <code>value</code> label text is green with normal font.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        plugins<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            datalabels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                color<span class="token punctuation">:</span> <span class="token string">'blue'</span><span class="token punctuation">,</span>
+                labels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                        font<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                            weight<span class="token punctuation">:</span> <span class="token string">'bold'</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    value<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                        color<span class="token punctuation">:</span> <span class="token string">'green'</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="dataset-overrides"><a href="labels.html#dataset-overrides" aria-hidden="true" class="header-anchor">#</a> Dataset Overrides</h2> <p>While the previous example creates multiple labels with the same options for all datasets, it's possible to add, modify and remove labels for specific datasets by referring to the label key.</p> <h3 id="modifying-labels"><a href="labels.html#modifying-labels" aria-hidden="true" class="header-anchor">#</a> Modifying Labels</h3> <p>To modify a label for a specific dataset, create an entry in the <code>labels</code> dataset options using the same key:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        datasets<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+            <span class="token comment">// First dataset.</span>
+            datalabels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                color<span class="token punctuation">:</span> <span class="token string">'yellow'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Second dataset.</span>
+            datalabels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                labels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                        color<span class="token punctuation">:</span> <span class="token string">'green'</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        plugins<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            datalabels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                color<span class="token punctuation">:</span> <span class="token string">'pink'</span><span class="token punctuation">,</span>
+                labels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    value<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                        color<span class="token punctuation">:</span> <span class="token string">'blue'</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>This example creates for each data element in the <em>first</em> dataset:</p> <ul><li>a <code>value</code> label with text in yellow</li> <li>a <code>title</code> label with text in blue</li></ul> <p>and for each data element in the <em>second</em> dataset:</p> <ul><li>a <code>value</code> label with text in pink</li> <li>a <code>title</code> label with text in green</li></ul> <div class="warning custom-block"><p class="custom-block-title">IMPORTANT</p> <p>Options defined under each <code>labels.&lt;key&gt;</code> always override options defined at the chart <strong>and</strong> dataset level (in the previous example, the <code>title</code> label text of the <em>first</em> dataset is blue, not yellow).</p></div> <h3 id="adding-label"><a href="labels.html#adding-label" aria-hidden="true" class="header-anchor">#</a> Adding Label</h3> <p>To add a new label to a specific dataset, create an entry under the <code>labels</code> dataset options using a <em>inexistent</em> label key. The following example creates one label (<code>title</code>) for each data element in the <em>first</em> dataset and two labels (<code>title</code> and <code>value</code>) for each data element in the <em>second</em> dataset:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        datasets<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+            <span class="token comment">// First dataset.</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Second dataset.</span>
+            datalabels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                labels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    value<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                        color<span class="token punctuation">:</span> <span class="token string">'green'</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        plugins<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            datalabels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                labels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                        color<span class="token punctuation">:</span> <span class="token string">'blue'</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="removing-label"><a href="labels.html#removing-label" aria-hidden="true" class="header-anchor">#</a> Removing Label</h3> <p>To remove a label for a specific dataset, create an <code>null</code> entry under the <code>labels</code> dataset options for the key of the label to remove. The following example removes the <code>title</code> label in the <em>second</em> dataset:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        datasets<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+            <span class="token comment">// First dataset.</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Second dataset.</span>
+            datalabels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                labels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    title<span class="token punctuation">:</span> <span class="token keyword">null</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        plugins<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            datalabels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                labels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                        color<span class="token punctuation">:</span> <span class="token string">'blue'</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/chartjs/chartjs-plugin-datalabels/edit/master/docs/guide/labels.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/8/2019, 9:32:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="options.html" class="prev">
+          Options
+        </a></span> <span class="next"><a href="positioning.html">
+          Positioning
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="../assets/js/app.c83c7867.js" defer></script><script src="../assets/js/3.a3a8139b.js" defer></script><script src="../assets/js/12.944237bb.js" defer></script>
+  </body>
+</html>

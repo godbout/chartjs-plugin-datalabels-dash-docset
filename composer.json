@@ -1,6 +1,6 @@
 {
     "name": "godbout/chartjs-plugin-datalabels-dash-docset",
-    "description": "",
+    "description": "chartjs-plugin-datalabels Dash Docset, built with the Dash Docset Builder in PHP. Because plugins too need some love ❤️",
     "keywords": [
         "chart",
         "chartjs",
@@ -30,11 +30,11 @@
     ],
     "require": {
         "php": "^7.3",
-        "codedungeon/phpunit-result-printer": "^0.28.0",
-        "godbout/dash-docset-builder": "^1.0",
-        "phpunit/phpunit": "^9.3"
+        "godbout/dash-docset-builder": "^1.0"
     },
     "require-dev": {
+        "codedungeon/phpunit-result-printer": "^0.28.0",
+        "phpunit/phpunit": "^9.3"
     },
     "autoload": {
         "psr-4": {
