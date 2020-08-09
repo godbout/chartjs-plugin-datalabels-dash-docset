@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
+use Wa72\HtmlPageDom\HtmlPageCrawler;
 
 class ChartjsPluginDatalabelsTest extends TestCase
 {
@@ -42,6 +43,22 @@ class ChartjsPluginDatalabelsTest extends TestCase
     }
 
     /** @test */
+    public function the_header_content_except_samples_gets_removed_from_the_dash_docset_files()
+    {
+        $searchForm = 'search-form';
+
+        $this->assertStringContainsString(
+            $searchForm,
+            Storage::get($this->docset->downloadedIndex())
+        );
+
+        $this->assertStringNotContainsString(
+            $searchForm,
+            Storage::get($this->docset->innerIndex())
+        );
+    }
+
+    /** @test */
     public function the_left_sidebar_gets_removed_from_the_dash_docset_files()
     {
         $leftSidebar = '"sidebar"';
@@ -54,6 +71,27 @@ class ChartjsPluginDatalabelsTest extends TestCase
         $this->assertStringNotContainsString(
             $leftSidebar,
             Storage::get($this->docset->innerIndex())
+        );
+    }
+
+    /** @test */
+    public function the_content_gets_centered_in_the_dash_docset_files()
+    {
+        $crawler = HtmlPageCrawler::create(
+            Storage::get($this->docset->downloadedIndex())
+        );
+
+        $this->assertNull(
+            $crawler->filter('.page')->getStyle('padding-left')
+        );
+
+        $crawler = HtmlPageCrawler::create(
+            Storage::get($this->docset->innerIndex())
+        );
+
+        $this->assertStringContainsString(
+            '0',
+            $crawler->filter('.page')->getStyle('padding-left')
         );
     }
 

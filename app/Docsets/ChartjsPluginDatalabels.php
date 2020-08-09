@@ -71,18 +71,14 @@ class ChartjsPluginDatalabels extends BaseDocset
     {
         $crawler = HtmlPageCrawler::create(Storage::get($file));
 
-        $this->removeLeftSidebar($crawler);
         $this->removeHeaderContentExceptSamples($crawler);
+        $this->removeLeftSidebar($crawler);
+        $this->centerContent($crawler);
         $this->removeEditLink($crawler);
 
         $this->insertDashTableOfContents($crawler);
 
         return $crawler->saveHTML();
-    }
-
-    protected function removeLeftSidebar(HtmlPageCrawler $crawler)
-    {
-        $crawler->filter('.sidebar')->remove();
     }
 
     protected function removeHeaderContentExceptSamples(HtmlPageCrawler $crawler)
@@ -93,6 +89,16 @@ class ChartjsPluginDatalabels extends BaseDocset
         $header->filter('header form')->remove();
         $header->filter('header .nav-item:not(:nth-child(3))')->remove();
         $header->filter('header nav > a')->remove();
+    }
+
+    protected function removeLeftSidebar(HtmlPageCrawler $crawler)
+    {
+        $crawler->filter('.sidebar')->remove();
+    }
+
+    protected function centerContent(HtmlPageCrawler $crawler)
+    {
+        $crawler->filter('.page')->css('padding-left', '0');
     }
 
     protected function removeEditLink(HtmlPageCrawler $crawler)
