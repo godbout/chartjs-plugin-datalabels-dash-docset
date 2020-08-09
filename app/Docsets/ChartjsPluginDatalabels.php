@@ -71,6 +71,30 @@ class ChartjsPluginDatalabels extends BaseDocset
     {
         $crawler = HtmlPageCrawler::create(Storage::get($file));
 
+        $this->removeLeftSidebar($crawler);
+        $this->removeHeaderContentExceptSamples($crawler);
+        $this->removeEditLink($crawler);
+
         return $crawler->saveHTML();
+    }
+
+    protected function removeLeftSidebar(HtmlPageCrawler $crawler)
+    {
+        $crawler->filter('.sidebar')->remove();
+    }
+
+    protected function removeHeaderContentExceptSamples(HtmlPageCrawler $crawler)
+    {
+        $header = $crawler->filter('header');
+
+        $header->filter('header > *:not(:last-child)')->remove();
+        $header->filter('header form')->remove();
+        $header->filter('header .nav-item:not(:nth-child(3))')->remove();
+        $header->filter('header nav > a')->remove();
+    }
+
+    protected function removeEditLink(HtmlPageCrawler $crawler)
+    {
+        $crawler->filter('.edit-link')->remove();
     }
 }

@@ -40,4 +40,36 @@ class ChartjsPluginDatalabelsTest extends TestCase
 
         $this->assertNotEquals(0, DB::table('searchIndex')->count());
     }
+
+    /** @test */
+    public function the_left_sidebar_gets_removed_from_the_dash_docset_files()
+    {
+        $leftSidebar = '"sidebar"';
+
+        $this->assertStringContainsString(
+            $leftSidebar,
+            Storage::get($this->docset->downloadedIndex())
+        );
+
+        $this->assertStringNotContainsString(
+            $leftSidebar,
+            Storage::get($this->docset->innerIndex())
+        );
+    }
+
+    /** @test */
+    public function the_edit_link_gets_removed_from_the_dash_docset_files()
+    {
+        $editLink = 'edit-link';
+
+        $this->assertStringContainsString(
+            $editLink,
+            Storage::get($this->docset->downloadedIndex())
+        );
+
+        $this->assertStringNotContainsString(
+            $editLink,
+            Storage::get($this->docset->innerIndex())
+        );
+    }
 }
