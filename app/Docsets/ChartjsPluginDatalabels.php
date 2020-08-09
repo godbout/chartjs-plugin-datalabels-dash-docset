@@ -76,6 +76,8 @@ class ChartjsPluginDatalabels extends BaseDocset
         $this->centerContent($crawler);
         $this->removeEditLink($crawler);
 
+        $this->removePackageVersionBadges($crawler);
+
         $this->insertDashTableOfContents($crawler);
 
         return $crawler->saveHTML();
@@ -104,6 +106,15 @@ class ChartjsPluginDatalabels extends BaseDocset
     protected function removeEditLink(HtmlPageCrawler $crawler)
     {
         $crawler->filter('.edit-link')->remove();
+    }
+
+    protected function removePackageVersionBadges(HtmlPageCrawler $crawler)
+    {
+        $crawler
+            ->filter('p > a:first-child > img')
+            ->each(function ($node) {
+                $node->closest('a')->remove();
+            });
     }
 
     protected function insertDashTableOfContents(HtmlPageCrawler $crawler)
