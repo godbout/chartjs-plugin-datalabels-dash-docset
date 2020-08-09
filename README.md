@@ -14,6 +14,5 @@ ___
   
 <br>
 <p align="center">
-    En cours de building...
+    <img src="https://github.com/godbout/chartjs-plugin-datalabels-dash-docset/blob/media/chartjs-plugin-datalabels-dash-docset.gif" alt="chartjs-plugin-datalabels for Dash">
 </p>
-    
