@@ -14,7 +14,7 @@ class ChartjsPluginDatalabels extends BaseDocset
     public const NAME = 'chartjs-plugin-datalabels';
     public const URL = 'chartjs-plugin-datalabels.netlify.app';
     public const INDEX = 'guide/index.html';
-    public const PLAYGROUND = '';
+    public const PLAYGROUND = 'https://chartjs-plugin-datalabels.netlify.app/samples/';
     public const ICON_16 = '../../icons/icon.png';
     public const ICON_32 = '../../icons/icon@2x.png';
     public const EXTERNAL_DOMAINS = [
