@@ -75,6 +75,8 @@ class ChartjsPluginDatalabels extends BaseDocset
         $this->removeHeaderContentExceptSamples($crawler);
         $this->removeEditLink($crawler);
 
+        $this->insertDashTableOfContents($crawler);
+
         return $crawler->saveHTML();
     }
 
@@ -97,4 +99,17 @@ class ChartjsPluginDatalabels extends BaseDocset
     {
         $crawler->filter('.edit-link')->remove();
     }
+
+    protected function insertDashTableOfContents(HtmlPageCrawler $crawler)
+    {
+        $crawler->filter('head')
+            ->before('<a name="//apple_ref/cpp/Section/Top" class="dashAnchor"></a>');
+
+        $crawler->filter('h2')->each(static function (HtmlPageCrawler $node) {
+            $node->before(
+                '<a id="' . Str::slug($node->text()) . '" name="//apple_ref/cpp/Section/' . rawurlencode($node->text()) . '" class="dashAnchor"></a>'
+            );
+        });
+    }
+
 }

@@ -72,4 +72,13 @@ class ChartjsPluginDatalabelsTest extends TestCase
             Storage::get($this->docset->innerIndex())
         );
     }
+
+    /** @test */
+    public function it_inserts_dash_anchors_in_the_doc_files()
+    {
+        $this->assertStringContainsString(
+            'name="//apple_ref/',
+            Storage::get($this->docset->innerIndex())
+        );
+    }
 }
