@@ -105,11 +105,10 @@ class ChartjsPluginDatalabels extends BaseDocset
         $crawler->filter('head')
             ->before('<a name="//apple_ref/cpp/Section/Top" class="dashAnchor"></a>');
 
-        $crawler->filter('h2')->each(static function (HtmlPageCrawler $node) {
+        $crawler->filter('h2, h3')->each(static function (HtmlPageCrawler $node) {
             $node->before(
                 '<a id="' . Str::slug($node->text()) . '" name="//apple_ref/cpp/Section/' . rawurlencode($node->text()) . '" class="dashAnchor"></a>'
             );
         });
     }
-
 }
